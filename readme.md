@@ -1,13 +1,56 @@
 
 # Analyzing Customer Churn using Power BI
 
-This project is about analyzing customer churn data using Power BI. The data contains information about customers who have left or stayed with a telecom company. The goal is to identify the patterns and factors that influence customer churn and provide insights for improving customer retention.
+This project is about analyzing customer churn data using Power BI. The data contains information about customers who have left or stayed with a telecom company called Databel. The goal is to identify the patterns and factors that influence customer churn and provide insights for improving customer retention.
 
 ## Data Source
 
-The data source for this project is a CSV file that contains 7043 rows and 21 columns. The columns include customer ID, gender, senior citizen, partner, dependents, tenure, phone service, multiple lines, internet service, online security, online backup, device protection, tech support, streaming TV, streaming movies, contract, paperless billing, payment method, monthly charges, total charges and churn.
+The data source for this project is a CSV file named databel.csv that contains 6687 rows and 25 columns. The columns include:
 
-The data was obtained from [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn).
+Metadata:
+
+| Customer status | Description |
+| --- | --- |
+| Customer ID | The unique ID that identifies a customer |
+| Churn Label | Contains “Yes” or “No” to indicate if a customer churned |
+| Churn Reason | The particular reason why the customer ended the contract |
+| Churn Category | Groups multiple churn reasons together for analysis purposes |
+
+
+| Demographics | Description |
+| --- | --- |
+| Under 30 | Indicates if the customer is under 30 with “Yes” or “No” |
+| Senior | Indicates if the customer is 65 or above with “Yes” or “No” |
+| Age | The age of the customer |
+| Gender | The gender of the customer, indicated by “Male”, “Female” or “Prefer not to say” |
+| Group | Indicates if the customer is part of a group contract. A group contract offers advantages and is generally cheaper. Contains “Yes” or “No” |
+
+
+| Contract information | Description |
+| --- | --- |
+| Number of customers in a group | Number of customers part of the group |
+| Phone Number | Phone number of the customer |
+| State | The code of the state where the customer lives |
+| Payment Method | Preferred payment method of the customer indicated with “Credit Card”, “Direct Debit” or “Paper Check” |
+| Contract Type | Contains “Month to Month”, “One Year” or “Two Year” |
+
+
+
+| Subscription types & Charges | Description |
+| --- | --- |
+| Account Length (in months) | The number of months the customer has been with Databel |
+| Local Calls | Amount of local (within the US) calls from the customer |
+| Intl Calls | Amount of international (outside the US) calls from the customer |
+| Intl Mins | The number of minutes spent calling internationally. |
+| Intl Plan | Indicates if the customer has a premium plan to call internationally for free with “Yes” or “No”. This premium is reflected in the amount of the monthly charge |
+| Extra International Charges | Additional charges incurred by the customer for making international calls without an international plan |
+| Customer Service Calls | The number of times the customer contacted the customer service |
+| Avg Monthly GB Download | The average amount of data downloaded by the customer per month in GB |
+| Unlimited Data Plan | Indicates if the customer has an unlimited data plan with “Yes” or “No” |
+| Extra Data Charges | Additional charges incurred by the customer for exceeding the data limit |
+| Monthly Charges | The amount charged to the customer every month |
+| Total Charges | The total amount charged to the customer for the entire duration of the contract |
+
 
 ## Data Preparation
 
@@ -17,8 +60,7 @@ The data was imported into Power BI and some transformations were applied using 
 - Replacing blank values with null values in total charges column
 - Removing customer ID column as it is not relevant for analysis
 - Creating a new column called group size based on the number of customers who have the same partner and dependents status
-- Creating a new column called international plan based on the phone service and multiple lines columns
-- Creating a new column called churn rate based on the churn column
+- Creating a new measure called churn rate based on the churn column
 
 ## Data Analysis
 
