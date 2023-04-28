@@ -91,5 +91,4 @@ The analysis revealed some interesting patterns and insights about customer chur
 
 ## Conclusion
 
-The project demonstrates how Power BI can be used to analyze customer churn data and provide valuable insights for improving customer retention. The project also shows how to write a good readme file for GitHub using Markdown syntax and best practices.
-
+The project demonstrates how Power BI can be used to analyze customer churn data and provide valuable insights for improving customer retention.
